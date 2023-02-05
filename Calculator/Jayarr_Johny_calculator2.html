@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scientific Calculator</title>
+  <meta charset="utf-8">
+  <meta name="keywords" content="HTML 5, CSS 3,Javascript">
+  <meta name="description" content="Dynamic Web Development">
+  <meta name="author" content="Jayarr">
+  <meta name="viewport" content="width=device-width, initail-scale=1.0">
+
+<style>
+body {
+    background-color: #f1f1f1;
+  }
+  
+  #calculator {
+    width: 400px;
+    height: 500px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px #ccc;
+  }
+  
+  #display {
+    width: 100%;
+    height: 150px;
+    background-color: #ddd;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #result {
+    width: 70%;
+    height: 50px;
+ font-size: 36px;
+  }
+
+  button{
+    height: 70px; width: 96px;
+    font-size: larger;
+    cursor: pointer;
+  }
+
+
+  button:hover{
+  background-color: darkslategray;
+  }
+  button:active {
+    background-color: burlywood;
+  }
+
+  .operator{
+    background-color: orange;
+    color: white;
+  }
+
+.figures{
+  background-color: black;
+  color: white;
+}
+  
+  
+
+</style>
+
+  </head>
+
+
+  <body>
+    <div id="calculator">
+      <div id="display">
+        <input type="text" id="result" disabled />
+      </div>
+      <div id="keypad">
+        <div class="row">
+          <button onclick="clear()" type="button" class="operator" id="clear">C</button>
+          <button type="button" class="operator" id="sqrt">√</button>
+          <button type="button" class="operator" id="square">x²</button>
+          <button type="button" class="operator" id="divide">/</button>
+        </div>
+        <div class="row">
+          <button type="button" class="figures" id="seven">7</button>
+          <button type="button" class="figures" id="eight">8</button>
+          <button type="button" class="figures" id="nine">9</button>
+          <button type="button" class="operator" id="multiply">x</button>
+        </div>
+        <div class="row">
+          <button type="button" class="figures" id="four">4</button>
+          <button type="button" class="figures" id="five">5</button>
+          <button type="button" class="figures" id="six">6</button>
+          <button type="button" class="operator" id="subtract">-</button>
+        </div>
+        <div class="row">
+          <button type="button" class="figures" id="one">1</button>
+          <button type="button" class="figures" id="two">2</button>
+          <button type="button" class="figures" id="three">3</button>
+          <button type="button" class="operator" id="add">+</button>
+        </div>
+        <div class="row">
+          <button type="button" class="figures" id="zero">0</button>
+          <button type="button" class="figures" id="doublezero">00</button>
+          <button type="button" class="operator" id="decimal">.</button>
+          <button type="button" class="operator" id="equals">=</button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<script>
+
+const display = document.querySelector("#result")
+    const clear = document.querySelector("#clear")
+    
+    const equals = document.querySelector("#equals")
+    const add = document.querySelector("#add")
+    const subtract = document.querySelector("#subtract")
+    const multiply = document.querySelector("#multiply")
+    const divide = document.querySelector("#divide")
+
+    const sqrt = document.querySelector("#sqrt")
+    const square = document.querySelector("#square")
+
+    const one = document.querySelector("#one")
+    const two = document.querySelector("#two")
+    const three = document.querySelector("#three")
+    const four = document.querySelector("#four")
+    const five = document.querySelector("#five")
+    const six = document.querySelector("#six")
+    const seven = document.querySelector("#seven")
+    const eight = document.querySelector("#eight")
+    const nine = document.querySelector("#nine")
+    const zero = document.querySelector("#zero")
+    const doublezero = document.querySelector("#doublezero")
+    
+    const dot = document.querySelector("#decimal")
+
+    equals.addEventListener("click", () => {
+      try {
+    display.value = eval(display.value);
+  } catch (error) {
+    display.value = "Error";
+  }
+     });
+
+    square.addEventListener("click", () => {
+    display.value += "**2";
+    });
+
+    sqrt.addEventListener("click", () => {
+      display.value = "Math.sqrt(" + display.value + ")";
+    });
+
+    add.addEventListener("click", () => {
+    display.value += "+";
+    });
+
+    subtract.addEventListener("click", () => {
+    display.value += "-";
+    });
+
+    divide.addEventListener("click", () => {
+    display.value += "/";
+    });
+
+    multiply.addEventListener("click", () => {
+    display.value += "*";
+    });
+
+
+    one.addEventListener("click", () => {
+    display.value += "1";
+    });
+
+    two.addEventListener("click", () => {
+    display.value += "2";
+    });
+
+    three.addEventListener("click", () => {
+    display.value += "3";
+    });
+
+    four.addEventListener("click", () => {
+    display.value += "4";
+    });
+
+    five.addEventListener("click", () => {
+    display.value += "5";
+    });
+
+    six.addEventListener("click", () => {
+    display.value += "6";
+    });
+
+    seven.addEventListener("click", () => {
+    display.value += "7";
+    });
+
+    eight.addEventListener("click", () => {
+    display.value += "8";
+    });
+
+    nine.addEventListener("click", () => {
+    display.value += "9";
+    });
+
+    zero.addEventListener("click", () => {
+    display.value += "0";
+    });
+
+    doublezero.addEventListener("click", () => {
+    display.value += "00";
+    });
+
+    dot.addEventListener("click",() => {
+      display.value += "."
+    })
+    
+    clear.addEventListener("click", () => {
+    display.value = "";
+    });
+
+
+</script>
+
+
+</body>
+</html>
+    
